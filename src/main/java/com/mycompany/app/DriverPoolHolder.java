@@ -10,7 +10,7 @@ public class DriverPoolHolder {
     private static WebDriver firefoxInstance;
     private static WebDriver chromeInstance;
 
-    public synchronized static WebDriver getDriver(String expectedDriverName) throws Exception {
+    public synchronized static WebDriver getDriver(String expectedDriverName)  {
         WebDriver result = null;
         if (expectedDriverName.equalsIgnoreCase("chrome")) {
             if (chromeInstance == null) {
@@ -25,7 +25,7 @@ public class DriverPoolHolder {
             }
             result = firefoxInstance;
         } else {
-            throw new Exception("unable to recognize expectedDriver's name " + expectedDriverName);
+            //throw new Exception("unable to recognize expectedDriver's name " + expectedDriverName);
         }
         return result;
     }

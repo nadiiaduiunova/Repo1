@@ -2,16 +2,21 @@ package com.mycompany.app;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
+import screens.GoogleHomePage;
 
 public class AppLazy {
     public static void main( String[] args ) throws Exception {
-        hashPool.getDriver("other").get("https://ua.fm");
-        String title = hashPool.getDriver("other").getTitle();
-        hashPool.getDriver("other").findElement(By.xpath("/html/body/div/div[5]/center/a/font")).click();
 
-        System.out.println(title);
+        WebDriverManager.chromedriver().setup();
 
-        hashPool.resetSession("Chrome");
+        GoogleHomePage homePage = new GoogleHomePage();
+
+        homePage.open();
+        homePage.Startsearch("hello");
+        homePage.sleep(5000);
+        homePage.textAvailable("hello");
+
+        DriverPoolHolder.resetSession("Chrome");
         System.out.println( "Hello World!" );
 
     }
