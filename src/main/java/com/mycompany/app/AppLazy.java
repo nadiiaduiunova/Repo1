@@ -5,6 +5,7 @@ import org.openqa.selenium.By;
 import screens.GoogleHomePage;
 
 public class AppLazy {
+
     public static void main( String[] args ) throws Exception {
 
         WebDriverManager.chromedriver().setup();
@@ -12,8 +13,8 @@ public class AppLazy {
         GoogleHomePage homePage = new GoogleHomePage();
 
         homePage.open();
-        homePage.Startsearch("hello");
-        homePage.sleep(5000);
+        homePage.Startsearch("dfjkbvjfbkjf");
+        //homePage.sleep(5000);
         homePage.textAvailable("hello");
 
         DriverPoolHolder.resetSession("Chrome");

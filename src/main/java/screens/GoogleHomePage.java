@@ -9,7 +9,7 @@ import org.openqa.selenium.WebElement;
 
 public class GoogleHomePage extends BasePage {
 
-        private static final String url ="https://www.google.com/";
+        private static final String url = "https://www.google.com/";
 
         public void open() {
                 DriverPoolHolder.getDriver("chrome").get(url);
@@ -30,8 +30,8 @@ public class GoogleHomePage extends BasePage {
         }
 
         public void StartHappySearch(String textToFind) {
-               searchTextField = DriverPoolHolder.getDriver("other").findElement(By.xpath(locatorSearchTextField));
-               makeHappySearchButton = DriverPoolHolder.getDriver("otrher").findElement(By.xpath(locatorMakeHappySearchButton));
+               searchTextField = DriverPoolHolder.getDriver("chrome").findElement(By.xpath(locatorSearchTextField));
+               makeHappySearchButton = DriverPoolHolder.getDriver("chrome").findElement(By.xpath(locatorMakeHappySearchButton));
 
                searchTextField.sendKeys(textToFind);
                makeHappySearchButton.click();

@@ -14,7 +14,7 @@ public class DriverPoolHolder {
         WebDriver result = null;
         if (expectedDriverName.equalsIgnoreCase("chrome")) {
             if (chromeInstance == null) {
-                WebDriverManager.chromedriver().version("73").setup();
+                WebDriverManager.chromedriver().version("74").setup();
                 chromeInstance = new ChromeDriver();
             }
             result = chromeInstance;
@@ -31,7 +31,7 @@ public class DriverPoolHolder {
     }
 
     public static void resetSession(String expectedDriverName) throws Exception {
-        if (expectedDriverName.equalsIgnoreCase("firefox")) {
+        if (expectedDriverName.equalsIgnoreCase("chrome")) {
             if (chromeInstance != null) {
                 chromeInstance.quit();
             } else if (firefoxInstance != null) {

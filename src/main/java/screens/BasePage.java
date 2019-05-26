@@ -15,8 +15,8 @@ public class BasePage {
             String xpath2 = "//*[contains(@label,'" + textAvailable + "')]";
             String xpath3 = "//*[contains(@name,'" + textAvailable + "')]";
             String xpath4 = "//*[contains(text(),'" + textAvailable + "')]";
-            String finalXPath = xpath1 + " | " + xpath2 + " | " + xpath3 + " | " + xpath4;
-            WebDriverWait wait = new WebDriverWait(DriverPoolHolder.getDriver("OTHER"), 10);
+            String finalXPath = "//*[@id=\"topstuff\"]/div/div/p[1]/em";
+            WebDriverWait wait = new WebDriverWait(DriverPoolHolder.getDriver("chrome"), 10);
             wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(finalXPath)));
 
             System.out.println("Text found: " + textAvailable);
